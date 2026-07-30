@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --color-lavender-whisper: #f0d7ff;
+  --color-forest-ink: #2dd4bf;
+  --color-ember-glow: #ffa946;
+  --color-vast-ink: #050505;
+  --color-lumen-cream: #E0D8D0;
+  --color-lumen-stone: #1a1a1e;
+  --color-fog: #9e968d;
+  --color-charcoal: #0d0d0f;
+  --color-pure-white: #ffffff;
+
+  --font-garamond: 'EB Garamond', Georgia, serif;
+  --font-figtree: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --color-lavender-whisper: #f0d7ff;
+  --color-forest-ink: #2dd4bf;
+  --color-ember-glow: #ffa946;
+  --color-vast-ink: #050505;
+  --color-lumen-cream: #E0D8D0;
+  --color-lumen-stone: #1a1a1e;
+  --color-fog: #9e968d;
+  --color-charcoal: #0d0d0f;
+  --color-pure-white: #ffffff;
+
+  font-family: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+  color-scheme: dark;
+}
+
+.font-garamond {
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+.font-figtree {
+  font-family: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Sophisticated Dark style rules */
+.btn-primary {
+  background-color: #E0D8D0;
+  color: #050505;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+  font-family: 'Figtree', sans-serif;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+.btn-primary:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #E0D8D0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  font-family: 'Figtree', sans-serif;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.card-cream {
+  background-color: #0d0d0f;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 32px;
+  color: #E0D8D0;
+}
+
+.card-dark {
+  background-color: #121215;
+  color: #E0D8D0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  padding: 32px;
+}
+
+

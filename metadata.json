@@ -1,0 +1,6 @@
+{
+  "name": "Grane",
+  "description": "Watch your app, translate errors into plain English, and validate feature ideas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
