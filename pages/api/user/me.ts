@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { supabaseAnon } from '../../../db/supabase';
+import { supabaseAnon, supabaseAdmin } from '../../../db/supabase';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
@@ -19,10 +19,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(401).json({ error: 'Invalid token' });
     }
 
+    // Get user profile from database
+    const { data: profile } = await supabaseAdmin
+      .from('users')
+      .select('id, email, plan, app_id')
+      .eq('id', user.id)
+      .single();
+
     return res.status(200).json({
       user: {
         id: user.id,
-        email: user.email
+        email: user.email,
+        plan: profile?.plan || 'free',
+        app_id: profile?.app_id || user.id // fallback to user id if no app_id
       }
     });
 
