@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #FAFAFA;
+    --foreground: #050505;
+    --lavender: #f0d7ff;
+    --forest: #2dd4bf;
+    --ember: #ffa946;
+    --cream: #E0D8D0;
+    --stone: #1a1a1e;
+    --fog: #9e968d;
+    --charcoal: #0d0d0f;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    color: #E0D8D0;
+    background: #050505;
+    font-family: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#E0D8D0] text-[#050505] border border-white/25 rounded-full font-semibold transition-all hover:bg-white hover:border-white hover:-translate-y-0.5 px-6 py-2;
+  }
+
+  .btn-secondary {
+    @apply bg-white/5 text-[#E0D8D0] border border-white/15 rounded-full font-medium transition-all hover:bg-white/10 hover:text-white hover:border-white/35 hover:-translate-y-0.5 px-6 py-2;
+  }
+
+  .card-cream {
+    @apply bg-[#0d0d0f] border border-white/10 rounded-3xl p-8 text-[#E0D8D0];
+  }
+
+  .card-dark {
+    @apply bg-[#121215] text-[#E0D8D0] border border-white/15 rounded-[28px] p-8;
+  }
+}
+
+.font-garamond {
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+.font-figtree {
+  font-family: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.3s;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+[data-user-display="logged-in"]  [data-user-display="logged-out"],
+[data-user-display="logged-out"] [data-user-display="logged-in"] {
+  display: none !important;
+}
