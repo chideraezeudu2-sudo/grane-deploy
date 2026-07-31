@@ -32,6 +32,7 @@ export const AnalyticsTab: React.FC<AnalyticsTabProps> = ({ onNavigateTab }) => 
   const [fakeDoors, setFakeDoors] = useState<FakeDoor[]>([]);
   const [usage, setUsage] = useState<UsageData | null>(null);
   const [activeScenario, setActiveScenario] = useState<ScenarioId>("live_stream");
+  const [showExamples, setShowExamples] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -231,38 +232,64 @@ export const AnalyticsTab: React.FC<AnalyticsTabProps> = ({ onNavigateTab }) => 
       <div className="card-cream border border-white/15 p-4 bg-[#0d0d0f] space-y-3">
         <div className="flex items-center justify-between">
           <span className="text-[10px] uppercase font-mono tracking-[0.2em] text-white/50 font-semibold">
-            Select Intelligence Scenario
+            Viewing
           </span>
           <span className="text-xs text-emerald-400 font-mono font-semibold">
             {currentScenario.badge}
           </span>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-1">
-          {(Object.keys(scenarios) as ScenarioId[]).map((key) => {
-            const sc = scenarios[key];
-            const isSelected = activeScenario === key;
-            return (
-              <button
-                key={key}
-                onClick={() => setActiveScenario(key)}
-                className={`p-3.5 rounded-xl text-left transition-all cursor-pointer border ${
-                  isSelected
-                    ? "bg-white text-black border-white shadow-lg shadow-white/10 scale-[1.02]"
-                    : "bg-[#000000] text-[#E0D8D0] border-white/10 hover:border-white/30 hover:bg-white/5"
-                }`}
-              >
-                <div className="flex items-center justify-between mb-1">
-                  <span className="font-semibold text-xs">{sc.name}</span>
-                  {isSelected && <CheckCircle2 className="w-3.5 h-3.5 text-black shrink-0" />}
-                </div>
-                <p className={`text-[11px] line-clamp-2 leading-relaxed ${isSelected ? "text-black/70" : "text-[#9e968d]"}`}>
-                  {sc.description}
-                </p>
-              </button>
-            );
-          })}
-        </div>
+        <button
+          onClick={() => setActiveScenario("live_stream")}
+          className={`w-full p-3.5 rounded-xl text-left transition-all cursor-pointer border ${
+            activeScenario === "live_stream"
+              ? "bg-white text-black border-white shadow-lg shadow-white/10"
+              : "bg-[#000000] text-[#E0D8D0] border-white/10 hover:border-white/30 hover:bg-white/5"
+          }`}
+        >
+          <div className="flex items-center justify-between mb-1">
+            <span className="font-semibold text-xs">{scenarios.live_stream.name}</span>
+            {activeScenario === "live_stream" && <CheckCircle2 className="w-3.5 h-3.5 text-black shrink-0" />}
+          </div>
+          <p className={`text-[11px] leading-relaxed ${activeScenario === "live_stream" ? "text-black/70" : "text-[#9e968d]"}`}>
+            {scenarios.live_stream.description}
+          </p>
+        </button>
+
+        <button
+          onClick={() => setShowExamples(!showExamples)}
+          className="text-[11px] text-[#9e968d] hover:text-white transition-colors cursor-pointer underline decoration-dotted underline-offset-4"
+        >
+          {showExamples ? "Hide example scenarios" : "Show example scenarios (not your data)"}
+        </button>
+
+        {showExamples && (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+            {(["checkout_crash", "onboarding_spike", "feature_demand"] as ScenarioId[]).map((key) => {
+              const sc = scenarios[key];
+              const isSelected = activeScenario === key;
+              return (
+                <button
+                  key={key}
+                  onClick={() => setActiveScenario(key)}
+                  className={`p-3.5 rounded-xl text-left transition-all cursor-pointer border ${
+                    isSelected
+                      ? "bg-white text-black border-white shadow-lg shadow-white/10 scale-[1.02]"
+                      : "bg-[#000000] text-[#E0D8D0] border-white/10 hover:border-white/30 hover:bg-white/5"
+                  }`}
+                >
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="font-semibold text-xs">{sc.name}</span>
+                    {isSelected && <CheckCircle2 className="w-3.5 h-3.5 text-black shrink-0" />}
+                  </div>
+                  <p className={`text-[11px] line-clamp-2 leading-relaxed ${isSelected ? "text-black/70" : "text-[#9e968d]"}`}>
+                    {sc.description}
+                  </p>
+                </button>
+              );
+            })}
+          </div>
+        )}
       </div>
 
       {/* Metric Cards Row */}

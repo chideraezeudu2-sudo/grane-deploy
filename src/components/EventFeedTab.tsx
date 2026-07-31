@@ -35,7 +35,10 @@ export const EventFeedTab: React.FC<EventFeedTabProps> = ({ user, onNavigateTab 
     return () => clearInterval(interval);
   }, [limit]);
 
-  const snippet = `<script src="${window.location.origin}/widget.js" data-app-id="${user.app_id}"></script>`;
+  const snippet = `<script src="${window.location.origin}/widget.js" data-app-id="${user.app_id}" data-color="#6C63FF" data-position="bottom-right"></script>`;
+  // data-color: any hex color, matches the customer's own branding
+  // data-position: "bottom-right" | "bottom-left" | "top-right" | "top-left"
+  // data-button-icon: any emoji or short text for the always-on button (defaults to 💬)
 
   const handleCopy = () => {
     navigator.clipboard.writeText(snippet);

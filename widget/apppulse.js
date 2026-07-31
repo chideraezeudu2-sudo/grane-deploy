@@ -1,13 +1,37 @@
 (function () {
-  const API_URL = 'https://api.apppulse.ai/api/events';
-  const APP_ID = 'YOUR_APP_ID'; // replaced dynamically when the snippet is generated per-user
+  // ---------- Config: read from the <script> tag's own attributes ----------
+  // Previously hardcoded to a placeholder and never actually picked up the
+  // customer's real app_id — every install would silently send events under
+  // 'YOUR_APP_ID' instead of the customer's own account.
+  const scriptTag =
+    document.currentScript || document.querySelector('script[data-app-id]');
+
+  const APP_ID = scriptTag ? scriptTag.getAttribute('data-app-id') : null;
+  const CUSTOM_COLOR = (scriptTag && scriptTag.getAttribute('data-color')) || '#6C63FF';
+  const CUSTOM_POSITION = (scriptTag && scriptTag.getAttribute('data-position')) || 'bottom-right';
+  const CUSTOM_BUTTON_TEXT = (scriptTag && scriptTag.getAttribute('data-button-icon')) || '💬';
+
+  const API_URL = new URL('/api/events', scriptTag ? scriptTag.src : window.location.origin).toString();
+
+  if (!APP_ID) {
+    console.error('Grane widget: missing data-app-id attribute on the <script> tag. Widget will not run.');
+    return;
+  }
+
+  const POSITIONS = {
+    'bottom-right': 'bottom:20px;right:20px;',
+    'bottom-left': 'bottom:20px;left:20px;',
+    'top-right': 'top:20px;right:20px;',
+    'top-left': 'top:20px;left:20px;'
+  };
+  const positionCss = POSITIONS[CUSTOM_POSITION] || POSITIONS['bottom-right'];
 
   // ---------- 1. Always-on Button ----------
   function createFeedbackButton() {
     const btn = document.createElement('button');
-    btn.innerHTML = '💬';
+    btn.innerHTML = CUSTOM_BUTTON_TEXT;
     btn.style.cssText =
-      'position:fixed;bottom:20px;right:20px;z-index:9999;background:#6C63FF;color:white;border:none;border-radius:50%;width:56px;height:56px;font-size:24px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);';
+      `position:fixed;${positionCss}z-index:9999;background:${CUSTOM_COLOR};color:white;border:none;border-radius:50%;width:56px;height:56px;font-size:24px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);`;
     btn.onclick = () => openFeedbackModal('feedback', {}, null);
     document.body.appendChild(btn);
   }
@@ -133,7 +157,7 @@
         <h3>${getModalTitle(type)}</h3>
         <p>${getModalDescription(type, context)}</p>
         <textarea id="apppulse-feedback" style="width:100%;height:80px;margin:12px 0;padding:8px;border:1px solid #ddd;border-radius:4px;font-family:inherit;resize:vertical;" placeholder="Tell us what happened..."></textarea>
-        <button id="apppulse-submit" style="background:#6C63FF;color:white;border:none;padding:8px 16px;border-radius:4px;cursor:pointer;">Send Feedback</button>
+        <button id="apppulse-submit" style="background:${CUSTOM_COLOR};color:white;border:none;padding:8px 16px;border-radius:4px;cursor:pointer;">Send Feedback</button>
         <button id="apppulse-close" style="background:transparent;border:none;color:#666;margin-left:8px;cursor:pointer;">Close</button>
       </div>
     `;
