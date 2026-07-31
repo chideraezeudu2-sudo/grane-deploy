@@ -11,7 +11,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
   const [copied, setCopied] = React.useState(false);
 
   const handleCopyCode = () => {
-    navigator.clipboard.writeText('<script src="https://cdn.apppulse.ai/widget.js" data-app-id="your-app-id"></script>');
+    navigator.clipboard.writeText('<script src="https://cdn.grane.ai/widget.js" data-app-id="your-app-id" data-api-url="https://your-grane-backend.com"></script>');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -156,7 +156,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
           {/* Snippet Block */}
           <div className="bg-[#000000] border border-white/15 rounded-2xl p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-white/80">
             <code className="break-all text-white/80">
-              &lt;script src="https://cdn.grane.ai/widget.js" data-app-id="your-app-id"&gt;&lt;/script&gt;
+              &lt;script src="https://cdn.grane.ai/widget.js" data-app-id="your-app-id" data-api-url="https://your-grane-backend.com"&gt;&lt;/script&gt;
             </code>
             <button
               onClick={handleCopyCode}
