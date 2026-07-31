@@ -29,9 +29,11 @@
   // ---------- 1. Always-on Button ----------
   function createFeedbackButton() {
     const btn = document.createElement('button');
-    btn.innerHTML = CUSTOM_BUTTON_TEXT;
+    // Default to MessageCircle SVG if CUSTOM_BUTTON_TEXT is still the old emoji
+    const defaultIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>';
+    btn.innerHTML = (CUSTOM_BUTTON_TEXT === '💬' || !CUSTOM_BUTTON_TEXT) ? defaultIcon : CUSTOM_BUTTON_TEXT;
     btn.style.cssText =
-      `position:fixed;${positionCss}z-index:9999;background:${CUSTOM_COLOR};color:white;border:none;border-radius:50%;width:56px;height:56px;font-size:24px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);`;
+      `position:fixed;${positionCss}z-index:9999;background:${CUSTOM_COLOR};color:white;border:none;border-radius:50%;width:56px;height:56px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;`;
     btn.onclick = () => openFeedbackModal('feedback', {}, null);
     document.body.appendChild(btn);
   }
@@ -206,5 +208,5 @@
   }
 
   createFeedbackButton();
-  console.log('🔍 AppPulse AI monitoring active');
+  console.log('Grane monitoring active');
 })();

@@ -107,9 +107,8 @@ export const WidgetSimulator: React.FC<WidgetSimulatorProps> = ({ appId, onEvent
     <div className="card-dark border border-white/15 bg-[#0c0c0e] shadow-2xl my-6 relative overflow-hidden">
       <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
         <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
           <h3 className="font-figtree font-medium text-base text-[#E0D8D0] flex items-center gap-2">
-            Interactive Widget Test Sandbox
+            Widget Test Sandbox
           </h3>
         </div>
         <span className="text-[10px] font-sans uppercase tracking-[0.15em] px-3 py-1 bg-white/10 text-[#E0D8D0] rounded-full border border-white/15">
@@ -127,7 +126,7 @@ export const WidgetSimulator: React.FC<WidgetSimulatorProps> = ({ appId, onEvent
           disabled={loading}
           className="bg-[#000000] hover:bg-white/10 text-[#E0D8D0] border border-white/15 rounded-xl p-3.5 text-left transition-all cursor-pointer flex flex-col justify-between group"
         >
-          <div className="flex items-center gap-2 text-amber-400 font-semibold text-xs mb-1">
+          <div className="flex items-center gap-2 text-[#E0D8D0] font-semibold text-xs mb-1">
             <AlertCircle className="w-4 h-4" />
             Simulate JS Crash
           </div>
@@ -139,7 +138,7 @@ export const WidgetSimulator: React.FC<WidgetSimulatorProps> = ({ appId, onEvent
           disabled={loading}
           className="bg-[#000000] hover:bg-white/10 text-[#E0D8D0] border border-white/15 rounded-xl p-3.5 text-left transition-all cursor-pointer flex flex-col justify-between group"
         >
-          <div className="flex items-center gap-2 text-purple-300 font-semibold text-xs mb-1">
+          <div className="flex items-center gap-2 text-[#E0D8D0] font-semibold text-xs mb-1">
             <MousePointerClick className="w-4 h-4" />
             Simulate Rage Click
           </div>
@@ -151,7 +150,7 @@ export const WidgetSimulator: React.FC<WidgetSimulatorProps> = ({ appId, onEvent
           disabled={loading}
           className="bg-[#000000] hover:bg-white/10 text-[#E0D8D0] border border-white/15 rounded-xl p-3.5 text-left transition-all cursor-pointer flex flex-col justify-between group"
         >
-          <div className="flex items-center gap-2 text-emerald-300 font-semibold text-xs mb-1">
+          <div className="flex items-center gap-2 text-[#E0D8D0] font-semibold text-xs mb-1">
             <Timer className="w-4 h-4" />
             Simulate 38s Pause
           </div>
@@ -160,8 +159,8 @@ export const WidgetSimulator: React.FC<WidgetSimulatorProps> = ({ appId, onEvent
       </div>
 
       {lastMessage && (
-        <div className="mt-4 p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-xs text-[#E0D8D0] flex items-center gap-2">
-          <Sparkles className="w-4 h-4 text-emerald-400 shrink-0" />
+        <div className="mt-4 p-3 bg-white/5 border border-white/15 rounded-xl text-xs text-[#E0D8D0] flex items-center gap-2">
+          <Sparkles className="w-4 h-4 text-[#6C63FF] shrink-0" />
           <span>{lastMessage}</span>
         </div>
       )}
@@ -171,7 +170,7 @@ export const WidgetSimulator: React.FC<WidgetSimulatorProps> = ({ appId, onEvent
         <div className="mt-6 p-5 bg-[#141418] text-[#E0D8D0] rounded-2xl border border-white/20 space-y-3 shadow-xl">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <MessageSquare className="w-4 h-4 text-emerald-400" />
+              <MessageSquare className="w-4 h-4 text-[#6C63FF]" />
               <span className="font-figtree font-semibold text-xs text-[#E0D8D0]">Widget Feedback Modal Prompt</span>
             </div>
             <button

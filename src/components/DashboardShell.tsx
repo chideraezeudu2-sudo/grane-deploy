@@ -49,11 +49,6 @@ export const DashboardShell: React.FC<DashboardShellProps> = ({ user, onLogout, 
             <span className="font-garamond text-3xl font-light tracking-tight text-[#E0D8D0] group-hover:text-white transition-colors">
               Grane
             </span>
-            <span className="hidden sm:inline-block text-white/20 text-xl font-light">/</span>
-            <span className="hidden sm:inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[11px] font-mono px-3 py-1 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Monitoring Live</span>
-            </span>
           </button>
 
           {/* Right Header Controls */}
@@ -74,7 +69,7 @@ export const DashboardShell: React.FC<DashboardShellProps> = ({ user, onLogout, 
                   {user.email.charAt(0).toUpperCase()}
                 </div>
                 <span className="hidden sm:inline font-medium">{user.email}</span>
-                <span className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-sans uppercase tracking-wider px-2 py-0.5 rounded-full">
+                <span className="bg-[#6C63FF]/20 text-[#6C63FF] border border-[#6C63FF]/30 text-[10px] font-sans uppercase tracking-wider px-2 py-0.5 rounded-full">
                   {user.plan}
                 </span>
                 <ChevronDown className="w-4 h-4 text-white/60" />

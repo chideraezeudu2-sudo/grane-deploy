@@ -25,7 +25,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
       <section className="pt-20 pb-24 px-6 max-w-5xl mx-auto text-center">
         {/* Eyebrow */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/15 font-figtree text-xs uppercase tracking-[0.2em] text-[#E0D8D0] mb-6">
-          <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+          <Sparkles className="w-3.5 h-3.5 text-[#6C63FF]" />
           <span>Product Intelligence Engine</span>
         </div>
 
@@ -129,7 +129,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
             <div className="space-y-3">
-              <span className="text-[10px] uppercase font-sans tracking-[0.3em] text-[#ffa946]">Step 01</span>
+              <span className="text-[10px] uppercase font-sans tracking-[0.3em] text-white/50">Step 01</span>
               <h3 className="font-garamond text-2xl text-[#E0D8D0]">Paste one line of code</h3>
               <p className="font-figtree text-xs text-[#9e968d] leading-relaxed">
                 Add our widget to your app with a single script tag. No SDK, no config files, no backend changes.
@@ -137,7 +137,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             </div>
 
             <div className="space-y-3">
-              <span className="text-[10px] uppercase font-sans tracking-[0.3em] text-[#ffa946]">Step 02</span>
+              <span className="text-[10px] uppercase font-sans tracking-[0.3em] text-white/50">Step 02</span>
               <h3 className="font-garamond text-2xl text-[#E0D8D0]">We watch, you don't have to</h3>
               <p className="font-figtree text-xs text-[#9e968d] leading-relaxed">
                 The widget quietly detects crashes, rage-clicks, and confusing pages — then asks users what happened, right when it happens.
@@ -145,7 +145,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
             </div>
 
             <div className="space-y-3">
-              <span className="text-[10px] uppercase font-sans tracking-[0.3em] text-[#ffa946]">Step 03</span>
+              <span className="text-[10px] uppercase font-sans tracking-[0.3em] text-white/50">Step 03</span>
               <h3 className="font-garamond text-2xl text-[#E0D8D0]">Get plain-English answers</h3>
               <p className="font-figtree text-xs text-[#9e968d] leading-relaxed">
                 Our AI translates the raw error into something you can actually act on. No more digging through stack traces to figure out what broke.
@@ -154,7 +154,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
           </div>
 
           {/* Snippet Block */}
-          <div className="bg-[#000000] border border-white/15 rounded-2xl p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-[#f0d7ff]">
+          <div className="bg-[#000000] border border-white/15 rounded-2xl p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-white/80">
             <code className="break-all text-white/80">
               &lt;script src="https://cdn.grane.ai/widget.js" data-app-id="your-app-id"&gt;&lt;/script&gt;
             </code>
@@ -162,7 +162,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
               onClick={handleCopyCode}
               className="btn-secondary px-4 py-2 text-xs flex items-center gap-1.5 shrink-0 cursor-pointer font-sans"
             >
-              {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+              {copied ? <Check className="w-3.5 h-3.5 text-[#6C63FF]" /> : <Copy className="w-3.5 h-3.5" />}
               <span>{copied ? "Copied!" : "Copy Snippet"}</span>
             </button>
           </div>
@@ -173,7 +173,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
       <section className="py-20 px-6 max-w-6xl mx-auto">
         <div className="card-cream border border-white/15 rounded-[32px] p-8 md:p-16 bg-gradient-to-br from-[#0d0d0f] to-[#15151a]">
           <div className="max-w-3xl">
-            <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.3em] text-emerald-400">
+            <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.3em] text-[#6C63FF]">
               Core Differentiator
             </span>
             <h2 className="font-garamond text-4xl md:text-6xl font-light text-[#E0D8D0] mt-2 mb-6">
@@ -183,7 +183,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
               Building the wrong feature costs you weeks. Grane's Fake Door tool lets you test demand first — add a button for a feature that doesn't exist yet, see who clicks, read what they say, and get an AI-scored priority rating. Build what people actually want, not what you assume they want.
             </p>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/15 text-xs text-[#E0D8D0]">
-              <Check className="w-3.5 h-3.5 text-emerald-400" />
+              <Check className="w-3.5 h-3.5 text-[#6C63FF]" />
               <span>Available on every plan, including Free.</span>
             </div>
           </div>
@@ -201,7 +201,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="card-cream flex gap-4 items-start">
             <div className="w-10 h-10 rounded-2xl bg-white/5 text-[#E0D8D0] border border-white/15 flex items-center justify-center shrink-0">
-              <Bug className="w-5 h-5 text-emerald-400" />
+              <Bug className="w-5 h-5 text-[#6C63FF]" />
             </div>
             <div>
               <h3 className="font-figtree font-semibold text-lg text-[#E0D8D0] mb-1">Crash Detection</h3>
@@ -225,7 +225,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
 
           <div className="card-cream flex gap-4 items-start">
             <div className="w-10 h-10 rounded-2xl bg-white/5 text-[#E0D8D0] border border-white/15 flex items-center justify-center shrink-0">
-              <MessageSquare className="w-5 h-5 text-purple-300" />
+              <MessageSquare className="w-5 h-5 text-[#6C63FF]" />
             </div>
             <div>
               <h3 className="font-figtree font-semibold text-lg text-[#E0D8D0] mb-1">Long-Pause Tracking</h3>
@@ -237,7 +237,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
 
           <div className="card-cream flex gap-4 items-start">
             <div className="w-10 h-10 rounded-2xl bg-white/5 text-[#E0D8D0] border border-white/15 flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-5 h-5 text-blue-400" />
+              <ShieldCheck className="w-5 h-5 text-[#6C63FF]" />
             </div>
             <div>
               <h3 className="font-figtree font-semibold text-lg text-[#E0D8D0] mb-1">Privacy-First</h3>
@@ -271,13 +271,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
               </div>
               <ul className="space-y-3 font-figtree text-xs text-[#9e968d] my-6">
                 <li className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-emerald-400" /> 500 events/month
+                  <Check className="w-3.5 h-3.5 text-[#6C63FF]" /> 500 events/month
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-emerald-400" /> 7-day data retention
+                  <Check className="w-3.5 h-3.5 text-[#6C63FF]" /> 7-day data retention
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-emerald-400" /> 1 active Fake Door
+                  <Check className="w-3.5 h-3.5 text-[#6C63FF]" /> 1 active Fake Door
                 </li>
                 <li className="flex items-center gap-2 text-white/30 line-through">
                   No AI diagnosis
@@ -305,16 +305,16 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
               </div>
               <ul className="space-y-3 font-figtree text-xs text-[#E0D8D0] my-6">
                 <li className="flex items-center gap-2 font-medium">
-                  <Check className="w-3.5 h-3.5 text-emerald-400" /> 5,000 events/month
+                  <Check className="w-3.5 h-3.5 text-[#6C63FF]" /> 5,000 events/month
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-emerald-400" /> 30-day data retention
+                  <Check className="w-3.5 h-3.5 text-[#6C63FF]" /> 30-day data retention
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-emerald-400" /> 3 active Fake Doors + AI sentiment
+                  <Check className="w-3.5 h-3.5 text-[#6C63FF]" /> 3 active Fake Doors + AI sentiment
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-emerald-400" /> AI crash translation
+                  <Check className="w-3.5 h-3.5 text-[#6C63FF]" /> AI crash translation
                 </li>
               </ul>
             </div>
@@ -336,16 +336,16 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
               </div>
               <ul className="space-y-3 font-figtree text-xs text-[#9e968d] my-6">
                 <li className="flex items-center gap-2 font-medium">
-                  <Check className="w-3.5 h-3.5 text-emerald-400" /> 25,000 events/month
+                  <Check className="w-3.5 h-3.5 text-[#6C63FF]" /> 25,000 events/month
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-emerald-400" /> 90-day data retention
+                  <Check className="w-3.5 h-3.5 text-[#6C63FF]" /> 90-day data retention
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-emerald-400" /> Unlimited Fake Doors + AI sentiment
+                  <Check className="w-3.5 h-3.5 text-[#6C63FF]" /> Unlimited Fake Doors + AI sentiment
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-3.5 h-3.5 text-emerald-400" /> AI crash + AI UX friction translation
+                  <Check className="w-3.5 h-3.5 text-[#6C63FF]" /> AI crash + AI UX friction translation
                 </li>
               </ul>
             </div>

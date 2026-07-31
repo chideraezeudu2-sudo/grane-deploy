@@ -76,7 +76,7 @@ export const UsageBillingTab: React.FC<UsageBillingTabProps> = ({ user, onUserUp
       <div className="card-cream border border-white/15 p-8 space-y-6 bg-[#0d0d0f]">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
-            <span className="text-[10px] font-sans uppercase tracking-[0.2em] font-semibold text-emerald-400">
+            <span className="text-[10px] font-sans uppercase tracking-[0.2em] font-semibold text-[#6C63FF]">
               Current Active Tier
             </span>
             <h2 className="font-garamond text-4xl font-light text-[#E0D8D0] capitalize mt-1">
@@ -118,7 +118,7 @@ export const UsageBillingTab: React.FC<UsageBillingTabProps> = ({ user, onUserUp
             )}
 
             {user.plan === "pro" && (
-              <span className="text-xs font-sans uppercase tracking-wider font-semibold text-emerald-300 bg-emerald-500/20 px-4 py-2 rounded-full border border-emerald-500/30">
+              <span className="text-xs font-sans uppercase tracking-wider font-semibold text-[#6C63FF] bg-[#6C63FF]/10 px-4 py-2 rounded-full border border-[#6C63FF]/20">
                 You're on our top plan.
               </span>
             )}
@@ -174,7 +174,7 @@ export const UsageBillingTab: React.FC<UsageBillingTabProps> = ({ user, onUserUp
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Free */}
-          <div className={`card-cream flex flex-col justify-between bg-[#0d0d0f] border ${user.plan === "free" ? "border-emerald-400" : "border-white/15"}`}>
+          <div className={`card-cream flex flex-col justify-between bg-[#0d0d0f] border ${user.plan === "free" ? "border-[#6C63FF]" : "border-white/15"}`}>
             <div>
               <h3 className="font-figtree font-medium text-xl text-[#E0D8D0]">Free</h3>
               <div className="my-4">
@@ -182,9 +182,9 @@ export const UsageBillingTab: React.FC<UsageBillingTabProps> = ({ user, onUserUp
                 <span className="text-xs text-[#9e968d]"> / month</span>
               </div>
               <ul className="space-y-3 font-figtree text-xs text-[#9e968d] my-6">
-                <li className="flex items-center gap-2 text-[#E0D8D0]"><Check className="w-4 h-4 text-emerald-400" /> 500 events/month</li>
-                <li className="flex items-center gap-2 text-[#E0D8D0]"><Check className="w-4 h-4 text-emerald-400" /> 7-day data retention</li>
-                <li className="flex items-center gap-2 text-[#E0D8D0]"><Check className="w-4 h-4 text-emerald-400" /> 1 active Fake Door</li>
+                <li className="flex items-center gap-2 text-[#E0D8D0]"><Check className="w-4 h-4 text-[#6C63FF]" /> 500 events/month</li>
+                <li className="flex items-center gap-2 text-[#E0D8D0]"><Check className="w-4 h-4 text-[#6C63FF]" /> 7-day data retention</li>
+                <li className="flex items-center gap-2 text-[#E0D8D0]"><Check className="w-4 h-4 text-[#6C63FF]" /> 1 active Fake Door</li>
                 <li className="flex items-center gap-2 text-white/30 line-through">No AI diagnosis</li>
               </ul>
             </div>
@@ -203,7 +203,7 @@ export const UsageBillingTab: React.FC<UsageBillingTabProps> = ({ user, onUserUp
           </div>
 
           {/* Basic */}
-          <div className={`card-cream flex flex-col justify-between bg-[#0d0d0f] border ${user.plan === "basic" ? "border-emerald-400" : "border-white/15"}`}>
+          <div className={`card-cream flex flex-col justify-between bg-[#0d0d0f] border ${user.plan === "basic" ? "border-[#6C63FF]" : "border-white/15"}`}>
             <div>
               <h3 className="font-figtree font-medium text-xl text-[#E0D8D0]">Basic</h3>
               <div className="my-4">
@@ -211,10 +211,10 @@ export const UsageBillingTab: React.FC<UsageBillingTabProps> = ({ user, onUserUp
                 <span className="text-xs text-[#9e968d]"> / month</span>
               </div>
               <ul className="space-y-3 font-figtree text-xs text-[#9e968d] my-6">
-                <li className="flex items-center gap-2 text-[#E0D8D0] font-medium"><Check className="w-4 h-4 text-emerald-400" /> 5,000 events/month</li>
-                <li className="flex items-center gap-2 text-[#E0D8D0]"><Check className="w-4 h-4 text-emerald-400" /> 30-day data retention</li>
-                <li className="flex items-center gap-2 text-[#E0D8D0]"><Check className="w-4 h-4 text-emerald-400" /> 3 active Fake Doors + AI sentiment</li>
-                <li className="flex items-center gap-2 text-[#E0D8D0]"><Check className="w-4 h-4 text-emerald-400" /> AI crash translation</li>
+                <li className="flex items-center gap-2 text-[#E0D8D0] font-medium"><Check className="w-4 h-4 text-[#6C63FF]" /> 5,000 events/month</li>
+                <li className="flex items-center gap-2 text-[#E0D8D0]"><Check className="w-4 h-4 text-[#6C63FF]" /> 30-day data retention</li>
+                <li className="flex items-center gap-2 text-[#E0D8D0]"><Check className="w-4 h-4 text-[#6C63FF]" /> 3 active Fake Doors + AI sentiment</li>
+                <li className="flex items-center gap-2 text-[#E0D8D0]"><Check className="w-4 h-4 text-[#6C63FF]" /> AI crash translation</li>
               </ul>
             </div>
             {user.plan === "basic" ? (
@@ -232,7 +232,7 @@ export const UsageBillingTab: React.FC<UsageBillingTabProps> = ({ user, onUserUp
           </div>
 
           {/* Pro */}
-          <div className={`card-cream flex flex-col justify-between bg-[#0d0d0f] border ${user.plan === "pro" ? "border-emerald-400" : "border-white/15"}`}>
+          <div className={`card-cream flex flex-col justify-between bg-[#0d0d0f] border ${user.plan === "pro" ? "border-[#6C63FF]" : "border-white/15"}`}>
             <div>
               <h3 className="font-figtree font-medium text-xl text-[#E0D8D0]">Pro</h3>
               <div className="my-4">
@@ -240,10 +240,10 @@ export const UsageBillingTab: React.FC<UsageBillingTabProps> = ({ user, onUserUp
                 <span className="text-xs text-[#9e968d]"> / month</span>
               </div>
               <ul className="space-y-3 font-figtree text-xs text-[#9e968d] my-6">
-                <li className="flex items-center gap-2 text-[#E0D8D0] font-medium"><Check className="w-4 h-4 text-emerald-400" /> 25,000 events/month</li>
-                <li className="flex items-center gap-2 text-[#E0D8D0]"><Check className="w-4 h-4 text-emerald-400" /> 90-day data retention</li>
-                <li className="flex items-center gap-2 text-[#E0D8D0]"><Check className="w-4 h-4 text-emerald-400" /> Unlimited Fake Doors + AI sentiment</li>
-                <li className="flex items-center gap-2 text-[#E0D8D0]"><Check className="w-4 h-4 text-emerald-400" /> AI crash + AI UX friction translation</li>
+                <li className="flex items-center gap-2 text-[#E0D8D0] font-medium"><Check className="w-4 h-4 text-[#6C63FF]" /> 25,000 events/month</li>
+                <li className="flex items-center gap-2 text-[#E0D8D0]"><Check className="w-4 h-4 text-[#6C63FF]" /> 90-day data retention</li>
+                <li className="flex items-center gap-2 text-[#E0D8D0]"><Check className="w-4 h-4 text-[#6C63FF]" /> Unlimited Fake Doors + AI sentiment</li>
+                <li className="flex items-center gap-2 text-[#E0D8D0]"><Check className="w-4 h-4 text-[#6C63FF]" /> AI crash + AI UX friction translation</li>
               </ul>
             </div>
             {user.plan === "pro" ? (

@@ -38,7 +38,7 @@ export const EventFeedTab: React.FC<EventFeedTabProps> = ({ user, onNavigateTab 
   const snippet = `<script src="${window.location.origin}/widget.js" data-app-id="${user.app_id}" data-color="#6C63FF" data-position="bottom-right"></script>`;
   // data-color: any hex color, matches the customer's own branding
   // data-position: "bottom-right" | "bottom-left" | "top-right" | "top-left"
-  // data-button-icon: any emoji or short text for the always-on button (defaults to 💬)
+  // data-button-icon: any emoji or short text for the always-on button (defaults to MessageCircle icon)
 
   const handleCopy = () => {
     navigator.clipboard.writeText(snippet);
@@ -58,38 +58,23 @@ export const EventFeedTab: React.FC<EventFeedTabProps> = ({ user, onNavigateTab 
   };
 
   const getTypeBadge = (type: string) => {
-    switch (type) {
-      case "crash":
-        return (
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-sans uppercase tracking-wider font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/30">
-            <AlertCircle className="w-3.5 h-3.5" /> Crash
-          </span>
-        );
-      case "rage_click":
-        return (
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-sans uppercase tracking-wider font-semibold bg-purple-500/10 text-purple-300 border border-purple-500/30">
-            <MousePointerClick className="w-3.5 h-3.5" /> Rage Click
-          </span>
-        );
-      case "long_pause":
-        return (
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-sans uppercase tracking-wider font-semibold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
-            <Timer className="w-3.5 h-3.5" /> Long Pause
-          </span>
-        );
-      case "feedback":
-        return (
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-sans uppercase tracking-wider font-semibold bg-blue-500/10 text-blue-300 border border-blue-500/30">
-            <MessageSquare className="w-3.5 h-3.5" /> Feedback
-          </span>
-        );
-      default:
-        return (
-          <span className="px-3 py-1 rounded-full text-[11px] font-sans uppercase tracking-wider font-semibold bg-white/10 text-[#E0D8D0] border border-white/20">
-            {type}
-          </span>
-        );
-    }
+    const iconMap: Record<string, React.ReactNode> = {
+      crash: <AlertCircle className="w-3.5 h-3.5" />,
+      rage_click: <MousePointerClick className="w-3.5 h-3.5" />,
+      long_pause: <Timer className="w-3.5 h-3.5" />,
+      feedback: <MessageSquare className="w-3.5 h-3.5" />,
+    };
+    const labelMap: Record<string, string> = {
+      crash: "Crash",
+      rage_click: "Rage Click",
+      long_pause: "Long Pause",
+      feedback: "Feedback",
+    };
+    return (
+      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-sans uppercase tracking-wider font-medium bg-white/10 text-[#E0D8D0] border border-white/20">
+        {iconMap[type] || null} {labelMap[type] || type}
+      </span>
+    );
   };
 
   return (
@@ -124,12 +109,12 @@ export const EventFeedTab: React.FC<EventFeedTabProps> = ({ user, onNavigateTab 
           </span>
           <button
             onClick={() => setShowHelpGuide(!showHelpGuide)}
-            className="text-xs text-emerald-400 hover:underline cursor-pointer"
+            className="text-xs text-[#6C63FF] hover:underline cursor-pointer"
           >
             {showHelpGuide ? "Hide installation guide" : "See installation guide"}
           </button>
         </div>
-        <div className="bg-[#000000] text-[#f0d7ff] p-4 rounded-xl border border-white/15 font-mono text-xs flex items-center justify-between gap-4 overflow-x-auto">
+        <div className="bg-[#000000] text-white/80 p-4 rounded-xl border border-white/15 font-mono text-xs flex items-center justify-between gap-4 overflow-x-auto">
           <code>{snippet}</code>
           <button
             onClick={handleCopy}
@@ -142,7 +127,7 @@ export const EventFeedTab: React.FC<EventFeedTabProps> = ({ user, onNavigateTab 
 
         {showHelpGuide && (
           <div className="p-4 bg-white/5 border border-white/15 rounded-xl text-xs text-[#E0D8D0] space-y-2">
-            <p className="font-semibold text-emerald-400">Quick Installation Steps:</p>
+            <p className="font-semibold text-[#E0D8D0]">Quick Installation Steps:</p>
             <ol className="list-decimal pl-5 space-y-1 text-[#9e968d]">
               <li>Copy the script tag above.</li>
               <li>Open your app's main HTML file (e.g. index.html).</li>
@@ -157,7 +142,7 @@ export const EventFeedTab: React.FC<EventFeedTabProps> = ({ user, onNavigateTab 
       {events.length === 0 ? (
         <div className="card-cream text-center py-16 space-y-4 border border-white/15">
           <div className="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mx-auto text-[#E0D8D0]">
-            <Sparkles className="w-7 h-7 text-emerald-400" />
+            <Sparkles className="w-7 h-7 text-[#6C63FF]" />
           </div>
           <h3 className="font-garamond text-3xl text-[#E0D8D0] font-light">No events collected yet</h3>
           <p className="text-xs text-[#9e968d] max-w-md mx-auto leading-relaxed">
@@ -190,7 +175,7 @@ export const EventFeedTab: React.FC<EventFeedTabProps> = ({ user, onNavigateTab 
 
                 {/* AI Diagnosis Box */}
                 <div className="bg-[#000000] text-[#E0D8D0] p-4 rounded-2xl border border-white/15 space-y-1">
-                  <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400">
+                  <div className="flex items-center gap-2 text-xs font-semibold text-[#6C63FF]">
                     <Sparkles className="w-3.5 h-3.5" />
                     <span>AI Diagnosis</span>
                   </div>
@@ -201,8 +186,8 @@ export const EventFeedTab: React.FC<EventFeedTabProps> = ({ user, onNavigateTab 
 
                 {/* User Feedback Block if present */}
                 {evt.user_feedback && (
-                  <div className="bg-white/5 border-l-2 border-emerald-400 p-3 rounded-r-xl text-xs text-[#E0D8D0] space-y-1">
-                    <span className="font-semibold text-emerald-400">User Feedback:</span>
+                  <div className="bg-white/5 border-l-2 border-[#6C63FF] p-3 rounded-r-xl text-xs text-[#E0D8D0] space-y-1">
+                    <span className="font-semibold text-[#6C63FF]">User Feedback:</span>
                     <blockquote className="italic font-figtree text-[#9e968d]">"{evt.user_feedback}"</blockquote>
                   </div>
                 )}

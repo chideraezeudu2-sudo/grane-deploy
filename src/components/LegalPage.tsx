@@ -13,7 +13,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type, onNavigate }) => {
         {/* Back Link */}
         <button
           onClick={() => onNavigate("landing")}
-          className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold text-emerald-400 hover:underline mb-8 cursor-pointer"
+          className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold text-[#6C63FF] hover:underline mb-8 cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Grane</span>
@@ -73,7 +73,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type, onNavigate }) => {
               <h2 className="font-garamond text-2xl text-[#E0D8D0] font-light">7. Contact</h2>
               <p className="text-xs md:text-sm text-[#9e968d]">
                 Questions about these Terms can be directed to{" "}
-                <a href="mailto:support@grane.ai" className="underline font-semibold text-emerald-400">
+                <a href="mailto:support@grane.ai" className="underline font-semibold text-[#6C63FF]">
                   support@grane.ai
                 </a>.
               </p>
@@ -102,7 +102,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type, onNavigate }) => {
               <h2 className="font-garamond text-2xl text-[#E0D8D0] font-light">5. Contact</h2>
               <p className="text-xs md:text-sm text-[#9e968d]">
                 Questions about this Privacy Policy can be directed to{" "}
-                <a href="mailto:support@grane.ai" className="underline font-semibold text-emerald-400">
+                <a href="mailto:support@grane.ai" className="underline font-semibold text-[#6C63FF]">
                   support@grane.ai
                 </a>.
               </p>

@@ -222,9 +222,9 @@ export const AnalyticsTab: React.FC<AnalyticsTabProps> = ({ onNavigateTab }) => 
             "Your Live Data" reflects your actual connected app. The other cards are illustrative examples of what different patterns can look like — not your real data.
           </p>
         </div>
-        <div className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-1.5 rounded-full text-xs font-mono text-emerald-400">
+        <div className="flex items-center gap-2 bg-white/5 border border-white/15 px-3.5 py-1.5 rounded-full text-xs font-mono text-white/70">
           <Sparkles className="w-3.5 h-3.5" />
-          <span>Grane Scenario Simulator Active</span>
+          <span>Scenario Simulator</span>
         </div>
       </div>
 
@@ -234,7 +234,7 @@ export const AnalyticsTab: React.FC<AnalyticsTabProps> = ({ onNavigateTab }) => 
           <span className="text-[10px] uppercase font-mono tracking-[0.2em] text-white/50 font-semibold">
             Viewing
           </span>
-          <span className="text-xs text-emerald-400 font-mono font-semibold">
+          <span className="text-xs text-[#6C63FF] font-mono font-semibold">
             {currentScenario.badge}
           </span>
         </div>
@@ -297,37 +297,37 @@ export const AnalyticsTab: React.FC<AnalyticsTabProps> = ({ onNavigateTab }) => 
         <div className="card-cream border border-white/15 p-5 bg-[#0d0d0f] space-y-1">
           <span className="text-[10px] font-mono uppercase tracking-wider text-white/40 block">TOTAL EVENTS</span>
           <span className="font-garamond text-3xl font-light text-white block">{currentScenario.metrics.totalEvents}</span>
-          <span className="text-[10px] text-emerald-400 font-mono">Captured this cycle</span>
+          <span className="text-[10px] text-white/50 font-mono">Captured this cycle</span>
         </div>
 
         <div className="card-cream border border-white/15 p-5 bg-[#0d0d0f] space-y-1">
           <span className="text-[10px] font-mono uppercase tracking-wider text-white/40 block">CRASH RATE</span>
-          <span className="font-garamond text-3xl font-light text-amber-400 block">{currentScenario.metrics.crashRate}</span>
+          <span className="font-garamond text-3xl font-light text-white block">{currentScenario.metrics.crashRate}</span>
           <span className="text-[10px] text-white/40 font-mono">JS runtime exceptions</span>
         </div>
 
         <div className="card-cream border border-white/15 p-5 bg-[#0d0d0f] space-y-1">
           <span className="text-[10px] font-mono uppercase tracking-wider text-white/40 block">FRICTION INDEX</span>
-          <span className="font-garamond text-3xl font-light text-purple-300 block">{currentScenario.metrics.frictionIndex}</span>
+          <span className="font-garamond text-3xl font-light text-white block">{currentScenario.metrics.frictionIndex}</span>
           <span className="text-[10px] text-white/40 font-mono">Rage clicks & hesitation</span>
         </div>
 
         <div className="card-cream border border-white/15 p-5 bg-[#0d0d0f] space-y-1">
           <span className="text-[10px] font-mono uppercase tracking-wider text-white/40 block">DEMAND SCORE</span>
-          <span className="font-garamond text-3xl font-light text-emerald-400 block">{currentScenario.metrics.demandScore}</span>
-          <span className="text-[10px] text-emerald-400 font-mono">Fake Door interest</span>
+          <span className="font-garamond text-3xl font-light text-[#6C63FF] block">{currentScenario.metrics.demandScore}</span>
+          <span className="text-[10px] text-white/50 font-mono">Fake Door interest</span>
         </div>
       </div>
 
       {/* AI Intelligence Diagnosis Callout */}
-      <div className="bg-gradient-to-r from-emerald-950/40 via-[#0d0d0f] to-[#15151a] border border-emerald-500/30 rounded-2xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl">
+      <div className="bg-[#0d0d0f] border border-white/15 rounded-2xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl">
         <div className="flex items-start gap-3.5">
-          <div className="w-9 h-9 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center shrink-0 mt-0.5">
+          <div className="w-9 h-9 rounded-full bg-[#6C63FF]/10 text-[#6C63FF] border border-[#6C63FF]/20 flex items-center justify-center shrink-0 mt-0.5">
             <Sparkles className="w-4 h-4" />
           </div>
           <div>
-            <span className="text-[10px] font-mono uppercase tracking-[0.2em] font-semibold text-emerald-400 block">
-              Grane AI Executive Recommendation
+            <span className="text-[10px] font-mono uppercase tracking-[0.2em] font-semibold text-[#6C63FF] block">
+              AI Recommendation
             </span>
             <p className="text-sm text-[#E0D8D0] leading-relaxed mt-1">
               {currentScenario.aiRecommendation}
@@ -356,10 +356,10 @@ export const AnalyticsTab: React.FC<AnalyticsTabProps> = ({ onNavigateTab }) => 
 
           {/* Chart Legend */}
           <div className="flex items-center gap-4 text-xs font-mono">
-            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#ffa946]" /> Crashes</span>
-            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#c084fc]" /> Rage Clicks</span>
-            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#2dd4bf]" /> Long Pauses</span>
-            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#60a5fa]" /> Feedback</span>
+            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-white" /> Crashes</span>
+            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-white/70" /> Rage Clicks</span>
+            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-white/50" /> Long Pauses</span>
+            <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-white/30" /> Feedback</span>
           </div>
         </div>
 
@@ -377,10 +377,10 @@ export const AnalyticsTab: React.FC<AnalyticsTabProps> = ({ onNavigateTab }) => 
                   fontSize: "12px",
                 }}
               />
-              <Area type="monotone" dataKey="crash" stackId="1" stroke="#ffa946" fill="#ffa946" fillOpacity={0.6} name="Crashes" />
-              <Area type="monotone" dataKey="rage_click" stackId="1" stroke="#c084fc" fill="#c084fc" fillOpacity={0.6} name="Rage Clicks" />
-              <Area type="monotone" dataKey="long_pause" stackId="1" stroke="#2dd4bf" fill="#2dd4bf" fillOpacity={0.6} name="Long Pauses" />
-              <Area type="monotone" dataKey="feedback" stackId="1" stroke="#60a5fa" fill="#60a5fa" fillOpacity={0.6} name="Feedback" />
+              <Area type="monotone" dataKey="crash" stackId="1" stroke="#6C63FF" fill="#6C63FF" fillOpacity={0.8} name="Crashes" />
+              <Area type="monotone" dataKey="rage_click" stackId="1" stroke="#6C63FF" fill="#6C63FF" fillOpacity={0.5} name="Rage Clicks" />
+              <Area type="monotone" dataKey="long_pause" stackId="1" stroke="#6C63FF" fill="#6C63FF" fillOpacity={0.3} name="Long Pauses" />
+              <Area type="monotone" dataKey="feedback" stackId="1" stroke="#6C63FF" fill="#6C63FF" fillOpacity={0.15} name="Feedback" />
             </AreaChart>
           </ResponsiveContainer>
         </div>
@@ -409,7 +409,7 @@ export const AnalyticsTab: React.FC<AnalyticsTabProps> = ({ onNavigateTab }) => 
                     fontSize: "12px",
                   }}
                 />
-                <Bar dataKey="count" fill="#2dd4bf" radius={[0, 8, 8, 0]} name="Events Captured" />
+                <Bar dataKey="count" fill="#6C63FF" radius={[0, 8, 8, 0]} name="Events Captured" />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -444,7 +444,7 @@ export const AnalyticsTab: React.FC<AnalyticsTabProps> = ({ onNavigateTab }) => 
                     <span className="text-[11px] text-[#9e968d]">{fd.button_text}</span>
                   </div>
                   <div className="text-right">
-                    <span className="font-garamond text-2xl font-light text-emerald-400 block">{fd.total_clicks}</span>
+                    <span className="font-garamond text-2xl font-light text-[#6C63FF] block">{fd.total_clicks}</span>
                     <span className="text-[10px] text-[#9e968d] uppercase tracking-wider">clicks</span>
                   </div>
                 </div>
@@ -480,7 +480,7 @@ export const AnalyticsTab: React.FC<AnalyticsTabProps> = ({ onNavigateTab }) => 
             {usage.percent_used >= 80 && (
               <button
                 onClick={() => onNavigateTab("billing")}
-                className="text-amber-400 font-semibold underline flex items-center gap-1 cursor-pointer"
+                className="text-[#6C63FF] font-semibold underline flex items-center gap-1 cursor-pointer"
               >
                 <span>Nearing your limit. Upgrade plan →</span>
               </button>
